@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 
@@ -17,11 +18,15 @@ import lombok.*;
 @ToString
 
 @Entity
+@Table(name = "bank")
+
 public class BankEntity {
 
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int bankId;
+
     @Column(name = "bank_swift_code", nullable = false )
     private String bankSwiftCode;
 
@@ -39,7 +44,5 @@ public class BankEntity {
     private String bankFaxNumber;
     @Column(name = "bank_balance")
     private BigDecimal bankBalance;
-
-    private String requestId;
     
 }

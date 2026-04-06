@@ -17,7 +17,6 @@ public class BankDto {
     private String bankCity;
     private String bankPhoneNumber;
     private String bankFaxNumber;
-    private String requestId;
     private BigDecimal bankBalance;
 
 }

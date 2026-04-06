@@ -16,7 +16,6 @@ public class BankMapper {
         bankDto.setBankCity(bankEntity.getBankCity());
         bankDto.setBankFaxNumber(bankEntity.getBankFaxNumber());
         bankDto.setBankPhoneNumber(bankEntity.getBankPhoneNumber());
-        bankDto.setRequestId(bankEntity.getRequestId());
         bankDto.setBankBalance(bankEntity.getBankBalance());
         return bankDto;
     }
@@ -31,7 +30,6 @@ public class BankMapper {
         bankEntity.setBankCity(bankDto.getBankCity());
         bankEntity.setBankFaxNumber(bankDto.getBankFaxNumber());
         bankEntity.setBankPhoneNumber(bankDto.getBankPhoneNumber());
-        bankEntity.setRequestId(bankDto.getRequestId());
         bankEntity.setBankBalance(bankDto.getBankBalance());
         
         return bankEntity;
