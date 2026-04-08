@@ -33,15 +33,18 @@ public class BankEntity {
     @Column(name = "bank_name")
     private String bankName;
 
-
     @Column(name = "bank_address")
     private String bankAddress;
+
     @Column(name = "bank_city")
     private String bankCity;
+
     @Column(name = "bank_phone_number")
     private String bankPhoneNumber;
+
     @Column(name = "bank_fax_number")
     private String bankFaxNumber;
+    
     @Column(name = "bank_balance")
     private BigDecimal bankBalance;
     

@@ -34,4 +34,13 @@ public class BankMapper {
         
         return bankEntity;
     }
+
+    public void updateFromDto(BankDto bankDto, BankEntity bankEntity) {
+        bankEntity.setBankName(bankDto.getBankName());
+        bankEntity.setBankAddress(bankDto.getBankAddress());
+        bankEntity.setBankCity(bankDto.getBankCity());
+        bankEntity.setBankFaxNumber(bankDto.getBankFaxNumber());
+        bankEntity.setBankPhoneNumber(bankDto.getBankPhoneNumber());
+        bankEntity.setBankBalance(bankDto.getBankBalance());
+    }
 }

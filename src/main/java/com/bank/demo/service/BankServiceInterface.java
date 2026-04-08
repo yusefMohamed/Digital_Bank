@@ -3,7 +3,6 @@ package com.bank.demo.service;
 import java.math.BigDecimal;
 import java.util.List;
 
-import com.bank.demo.entity.BankEntity;
 import com.bank.demo.model.BankDto;
 
 public interface BankServiceInterface {
@@ -12,8 +11,12 @@ public interface BankServiceInterface {
 
     BigDecimal getBankBalanceBySwiftCode(String swiftCode);
 
-    BankEntity registerBank(BankDto bankDto);
+    BankDto registerBank(BankDto bankDto);
 
     List<BankDto> findAllBanks();
+
+    BankDto updateBankBySwiftCode (String bankSwiftCode, BankDto bankDto);
+
+    void deleteBankBySwiftCode (String bankSwiftCode);
 
 }

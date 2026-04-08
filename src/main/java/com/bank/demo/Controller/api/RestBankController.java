@@ -16,8 +16,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 @RestController
 @RequestMapping("/api/banks")
@@ -72,6 +75,28 @@ public class RestBankController {
                 HttpStatus.OK.value());
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-    
+
+    @PutMapping("/{swiftCode}")
+    public ResponseEntity<GeneralResponse<BankDto>> updateBankBySwiftCode( @PathVariable String swiftCode, @RequestBody BankDto bankDto) {
+        
+        bankService.updateBankBySwiftCode(swiftCode, bankDto);
+        GeneralResponse<BankDto>response= new GeneralResponse<BankDto>(
+            bankDto, 
+            "Bank updated Successfully", 
+            HttpStatus.OK.value());
+        return new ResponseEntity<>(response,HttpStatus.OK);
+    }
+
+    @DeleteMapping ("/{swiftCode}")
+
+    public ResponseEntity<GeneralResponse<BankDto>> deleteBankBySwiftCode( @PathVariable String swiftCode) {
+        
+        bankService.deleteBankBySwiftCode(swiftCode);
+        GeneralResponse<BankDto>response= new GeneralResponse<BankDto>(
+            null, 
+            "Bank deleted Successfully", 
+            HttpStatus.OK.value());
+        return new ResponseEntity<>(response,HttpStatus.OK);
+    }
 
 }
